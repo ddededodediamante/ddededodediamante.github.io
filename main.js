@@ -17,3 +17,9 @@ const toolbox = {
     }
   ]
 };
+Blockly.inject('blocklyDiv', {
+  toolbox: toolbox,
+  scrollbars: false,
+  horizontalLayout: true,
+  toolboxPosition: "end",
+});
