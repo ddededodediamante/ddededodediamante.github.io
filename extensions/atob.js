@@ -6,7 +6,7 @@
       return {
         id: 'ddeAtob',
         name: 'Atob',
-        color1: '#72cf94',
+        color1: '#ff6a6a',
         blocks: [
           {
             opcode: 'resultatob',
