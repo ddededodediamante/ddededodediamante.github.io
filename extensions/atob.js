@@ -1,4 +1,6 @@
 (function(Scratch) {
+  //Made by ddededodediamante
+  //Do not remove these comments
   class AtobThing {
     getInfo() {
       return {
