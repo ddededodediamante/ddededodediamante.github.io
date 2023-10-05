@@ -1,4 +1,6 @@
 (function(Scratch) {
+  //Made by ddededodediamante
+  //Do not remove these comments
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('Extension must run unsandboxed!');
   }
