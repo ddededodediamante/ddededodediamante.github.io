@@ -11,7 +11,7 @@
     getInfo() {
       return {
         id: 'spriteblock',
-        name: 'Sprite',
+        name: 'Sprite controls',
         blocks: [
           {
             opcode: 'logsprite',
