@@ -1,13 +1,13 @@
 (function(Scratch) {
-  class atobThing {
+  class AtobThing {
     getInfo() {
       return {
-        id: 'atob',
+        id: 'ddeAtob',
         name: 'Atob',
         color1: '#72cf94',
         blocks: [
           {
-            opcode: 'doatob',
+            opcode: 'resultatob',
             blockType: Scratch.BlockType.REPORTER,
             text: 'atob[txt]',
             arguments: {
@@ -20,7 +20,7 @@
         ]
       };
     }
-    doatob(args) {
+    resultatob(args) {
       try {
         return window.atob(Scratch.Cast.toString(args.txt));
       } catch(err) {
@@ -28,5 +28,5 @@
       }
     }
   }
-  Scratch.extensions.register(new atobThing());
+  Scratch.extensions.register(new AtobThing());
 })(Scratch);
