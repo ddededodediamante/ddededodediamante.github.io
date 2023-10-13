@@ -140,6 +140,7 @@
     allsprites() {
       const array = [];
       const targets = Scratch.vm.runtime.targets;
+      if (targets.length < 2) { return ['No sprites.']; }
       for (let i = 1; i < targets.length; i++) {
         const sprite = targets[i];
         if (sprite.isOriginal) {
