@@ -19,7 +19,7 @@
         }
 
         video {
-            width: 80%;
+            width: 90%;
             max-width: 1200px;
             height: auto;
         }
@@ -31,11 +31,18 @@
         window.onload = function() {
             document.body.style.backgroundColor = getRandomColor();
         };
+        function toggleControls() {
+            const video = document.querySelector('video');
+            if (video) {
+                video.controls = false;
+                video.play();
+            }
+        }
     </script>
 </head>
 <body>
     <h1>Hehehehe yu just got souhhhdowejuststartdigging-lled😂!</h1>
-    <video autoplay loop>
+    <video controls autoplay loop onclick="toggleControls()">
         <source src="https://ddededodediamante.github.io/file/souhhhdowejuststartdigging.mp4" type="video/mp4">
         Get a better browser LMFAO😂😂😂😂😂😂!!11111!!!!!11!!
     </video>
