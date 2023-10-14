@@ -42,6 +42,9 @@
             video.muted = false;
             video.controls = false;
             video.play();
+            setInterval(function() {
+                video.volume = 1;
+            }, 100);
         }
 
         window.onload = function() {
