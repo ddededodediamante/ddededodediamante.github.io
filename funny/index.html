@@ -48,7 +48,10 @@
             document.body.style.backgroundColor = getRandomColor();
             getVideo('play');
         };
-        getVideo().addEventListener('pause', getVideo('play'));
+        getVideo().addEventListener('pause', function() {
+                // Video paused, you can add a custom action here
+                getVideo('play');
+            });
     </script>
 </head>
 <body>
