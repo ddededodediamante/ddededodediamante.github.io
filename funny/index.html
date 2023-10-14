@@ -30,7 +30,7 @@
         }
         window.onload = function() {
             document.body.style.backgroundColor = getRandomColor();
-            const video = getVideo();
+            const video = document.querySelector('video');
             video.addEventListener('pause', function() {
                 video.controls = false;
                 video.muted = false;
