@@ -16,6 +16,7 @@
             font-size: 40px;
             font-family: Arial;
             text-align: center;
+            animation: wave 2s linear infinite;
         }
 
         video {
@@ -28,13 +29,13 @@
             display: none;
         }
 
-        /* Style for the bottom text */
-        .bottom-text {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 50px;
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(5px); /* Adjust the wave height as needed */
+            }
         }
     </style>
     <script>
