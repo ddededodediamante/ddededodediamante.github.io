@@ -30,7 +30,7 @@
         }
         function getVideo(action) {
             const video = document.querySelector('video');
-            if (action) {
+            if (action && action != null && action != '') {
                 if (action == 'play') {
                     video.play();
                     return;
@@ -45,10 +45,6 @@
             document.body.style.backgroundColor = getRandomColor();
             getVideo('unmute');
         };
-        const video = getVideo();
-        video.addEventListener('pause', function() {
-            getVideo('play');
-        });
     </script>
 </head>
 <body>
