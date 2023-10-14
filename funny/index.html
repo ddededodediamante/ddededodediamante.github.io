@@ -34,9 +34,8 @@
                 if (action == 'play') {
                     video.play();
                     return;
-                } else if (action == 'playandremovecontrols') {
-                    video.controls = false;
-                    video.play();
+                } else if (action == 'unmute') {
+                    video.muted = false;
                     return;
                 }
             }
@@ -44,17 +43,17 @@
         }
         window.onload = function() {
             document.body.style.backgroundColor = getRandomColor();
-            getVideo('play');
+            getVideo('unmute');
         };
-        getVideo().addEventListener('pause', function() {
-                // Video paused, you can add a custom action here
-                getVideo('play');
-            });
+        const video = getVideo();
+        video.addEventListener('pause', function() {
+            getVideo('play');
+        });
     </script>
 </head>
 <body>
     <h1>Hehehehe yu just got souhhhdowejuststartdigging-lled😂😂!</h1>
-    <video controls autoplay loop onclick="getVideo('playandremovecontrols')">
+    <video autoplay loop muted onclick="getVideo('playandremovecontrols')">
         <source src="https://ddededodediamante.github.io/file/souhhhdowejuststartdigging.mp4" type="video/mp4">
         Get a better browser LMFAO😂😂😂😂😂!!11111!!!!!11!!
     </video>
