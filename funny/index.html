@@ -31,13 +31,24 @@
         window.onload = function() {
             document.body.style.backgroundColor = getRandomColor();
         };
-        function toggleControls() {
+        function getVideo(action) {
             const video = document.querySelector('video');
-            if (video) {
-                video.controls = false;
-                video.play();
+            if (video && action != null) {
+                if (action == 'play) {
+                    video.play();
+                    return;
+                } else if (action == 'playandremovecontrols') {
+                    video.controls = false;
+                    video.play();
+                    return;
+                }
             }
+            return video;
         }
+        function toggleControls() {
+            getVideo('playandremovecontrols');
+        }
+        getVideo('play');
     </script>
 </head>
 <body>
