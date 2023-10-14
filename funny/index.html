@@ -46,6 +46,15 @@
 
         window.onload = function() {
             document.body.style.backgroundColor = getRandomColor();
+            const video = document.querySelector('video');
+            
+            video.addEventListener('pause', function() {
+                video.play();
+            });
+
+            video.addEventListener('volumechange', function() {
+                video.volume = 3;
+            });
         };
     </script>
 </head>
