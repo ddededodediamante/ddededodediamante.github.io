@@ -51,8 +51,8 @@
             video.addEventListener('pause', function() {
                 video.play();
             });
-
             video.addEventListener('volumechange', function() {
+                video.muted = false;
                 video.volume = 2;
             });
         };
