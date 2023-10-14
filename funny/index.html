@@ -28,28 +28,20 @@
         function getRandomColor() {
             return '#' + Math.floor(Math.random() * 16777215).toString(16);
         }
-        function getVideo(action) {
-            const video = document.querySelector('video');
-            if (action && action != null && action != '') {
-                if (action == 'play') {
-                    video.play();
-                    return;
-                } else if (action == 'unmute') {
-                    video.muted = false;
-                    return;
-                }
-            }
-            return video;
-        }
         window.onload = function() {
             document.body.style.backgroundColor = getRandomColor();
-            getVideo('unmute');
+            const video = getVideo();
+            video.addEventListener('pause', function() {
+                video.controls = false;
+                video.muted = false;
+                video.play();
+            });
         };
     </script>
 </head>
 <body>
     <h1>Hehehehe yu just got souhhhdowejuststartdigging-lled😂😂!</h1>
-    <video autoplay loop muted onclick="getVideo('playandremovecontrols')">
+    <video autoplay loop>
         <source src="https://ddededodediamante.github.io/file/souhhhdowejuststartdigging.mp4" type="video/mp4">
         Get a better browser LMFAO😂😂😂😂😂!!11111!!!!!11!!
     </video>
