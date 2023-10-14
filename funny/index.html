@@ -2,15 +2,42 @@
 <html>
 <head>
     <title>Funny</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        video {
+            width: 80%;
+            max-width: 1200px;
+            height: auto;
+        }
+    </style>
+    <script>
+        function getRandomColor() {
+            return '#' + Math.floor(Math.random()*16777215).toString(16);
+        }
+        window.onload = function() {
+            document.body.style.backgroundColor = getRandomColor();
+        };
+    </script>
 </head>
 <body>
-    <div style="text-align: center;">
-        <h1 style="font-size: 36px;">Hehehehe yu just got souhhhdowejuststartdigging-lled😂!</h1>
-    </div>
-    
-    <video width="640" height="360" autoplay controls>
+    <h1>Hehehehe yu just got souhhhdowejuststartdigging-lled😂!</h1>
+    <video autoplay loop>
         <source src="https://ddededodediamante.github.io/file/souhhhdowejuststartdigging.mp4" type="video/mp4">
-        Get a better browser bro LMFAO😂😂😂😂
+        Get a better browser LMFAO😂😂😂😂😂😂!!11111!!!!!11!!
     </video>
 </body>
 </html>
