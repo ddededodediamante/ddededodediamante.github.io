@@ -16,7 +16,7 @@
             font-size: 40px;
             font-family: Arial;
             text-align: center;
-            animation: wave 1.5s ease infinite;
+            animation: wave 1s ease-in-out infinite;
         }
 
         video {
@@ -31,10 +31,10 @@
 
         @keyframes wave {
             0%, 100% {
-                transform: rotate(-70deg);
+                transform: rotate(-10deg);
             }
             50% {
-                transform: rotate(70deg);
+                transform: rotate(10deg);
             }
         }
     </style>
