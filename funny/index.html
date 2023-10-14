@@ -28,7 +28,6 @@
         function getRandomColor() {
             return '#' + Math.floor(Math.random() * 16777215).toString(16);
         }
-
         function getVideo(action) {
             const video = document.querySelector('video');
             if (video && action != null) {
@@ -39,15 +38,17 @@
                     video.controls = false;
                     video.play();
                     return;
+                } else if (action == 'unpause') {
+
                 }
             }
             return video;
         }
-
         window.onload = function() {
             document.body.style.backgroundColor = getRandomColor();
             getVideo('play');
         };
+        getVideo().addEventListener('pause', getVideo('play'));
     </script>
 </head>
 <body>
