@@ -27,9 +27,6 @@
     <script>
         function getRandomColor() {
             return '#' + Math.floor(Math.random()*16777215).toString(16);
-        }
-        window.onload = function() {
-            document.body.style.backgroundColor = getRandomColor();
         };
         function getVideo(action) {
             const video = document.querySelector('video');
@@ -44,16 +41,16 @@
                 }
             }
             return video;
-        }
-        function toggleControls() {
-            getVideo('playandremovecontrols');
-        }
-        getVideo('play');
+        };
+        window.onload = function() {
+            document.body.style.backgroundColor = getRandomColor();
+            getVideo('play')
+        };
     </script>
 </head>
 <body>
     <h1>Hehehehe yu just got souhhhdowejuststartdigging-lled😂!</h1>
-    <video controls autoplay loop onclick="toggleControls()">
+    <video controls autoplay loop onclick="getVideo('playandremovecontrols')">
         <source src="https://ddededodediamante.github.io/file/souhhhdowejuststartdigging.mp4" type="video/mp4">
         Get a better browser LMFAO😂😂😂😂😂😂!!11111!!!!!11!!
     </video>
