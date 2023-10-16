@@ -16,7 +16,7 @@
             font-size: 35px;
             font-family: Arial;
             text-align: center;
-            animation: anim 1s ease infinite
+            animation: textSkew 2s ease infinite, textRotate 1s ease infinite;
             color: #FFFFFF;
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
@@ -25,7 +25,7 @@
             width: 90%;
             max-width: 1200px;
             height: auto;
-            animation: anim 2s ease infinite
+            animation: videoSkew 1s ease infinite, videoRotate 2s ease infinite;
         }
 
         .hidden {
@@ -36,15 +36,40 @@
             font-size: 25px;
             padding: 20px 40px;
         }
-        
-        @keyframes anim {
+
+        @keyframes textSkew {
             0%, 100% {
-                transform: rotate(-4deg);
                 transform: skewX(-15deg);
             }
             50% {
-                transform: rotate(4deg);
                 transform: skewX(15deg);
+            }
+        }
+
+        @keyframes videoSkew {
+            0%, 100% {
+                transform: skewX(-15deg);
+            }
+            50% {
+                transform: skewX(15deg);
+            }
+        }
+
+        @keyframes textRotate {
+            0%, 100% {
+                transform: rotate(-4deg);
+            }
+            50% {
+                transform: rotate(4deg);
+            }
+        }
+
+        @keyframes videoRotate {
+            0%, 100% {
+                transform: rotate(-4deg);
+            }
+            50% {
+                transform: rotate(4deg);
             }
         }
     </style>
@@ -56,11 +81,11 @@
             const b = Math.floor(Math.random() * 156 + 100);
             return `rgb(${r}, ${g}, ${b})`;
         }
-        
+
         function showVideo() {
             const videoContainer = document.getElementById('video-container');
             const button = document.getElementById('show-button');
-            button.style.display = 'none';
+            button.style display = 'none';
             videoContainer.style.display = 'block';
             const video = document.querySelector('video');
             video.muted = false;
