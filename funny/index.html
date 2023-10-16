@@ -64,7 +64,6 @@
         }
         
         function showVideo() {
-            document.body.style.backgroundColor = getRandomPastelColor();
             const videoContainer = document.getElementById('video-container');
             const button = document.getElementById('show-button');
             button.style.display = 'none';
@@ -76,12 +75,15 @@
         }
 
         window.onload = function() {
+            document.body.style.backgroundColor = getRandomPastelColor();
             const video = document.querySelector('video');
             video.addEventListener('pause', function() {
+                video.controls = false;
                 video.play();
             });
             video.addEventListener('volumechange', function() {
                 video.muted = false;
+                video.controls = false;
                 video.volume = 1;
             });
         };
