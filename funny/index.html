@@ -16,7 +16,7 @@
             font-size: 35px;
             font-family: Arial;
             text-align: center;
-            animation: skew 2s ease infinite, wave 1s ease infinite;
+            animation: askew 2s ease infinite, awave 1s ease infinite;
             color: #FFFFFF;
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
@@ -25,7 +25,7 @@
             width: 90%;
             max-width: 1200px;
             height: auto;
-            animation: skew 1s ease infinite, wave 2s ease infinite;
+            animation: bskew 1s ease infinite, bwave 2s ease infinite;
         }
 
         .hidden {
@@ -37,7 +37,15 @@
             padding: 20px 40px;
         }
         
-        @keyframes wave {
+        @keyframes awave {
+            0%, 100% {
+                transform: rotate(-4deg);
+            }
+            50% {
+                transform: rotate(4deg);
+            }
+        }
+        @keyframes awave {
             0%, 100% {
                 transform: rotate(-4deg);
             }
@@ -46,7 +54,15 @@
             }
         }
         
-        @keyframes skew {
+        @keyframes bskew {
+            0%, 100% {
+                transform: skewX(-20deg);
+            }
+            50% {
+                transform: skewX(20deg);
+            }
+        }
+        @keyframes bskew {
             0%, 100% {
                 transform: skewX(-20deg);
             }
