@@ -23,7 +23,7 @@
             width: 98%;
             max-width: 1200px;
             height: auto;
-            animation: wave 1s ease-in-out infinite;
+            animation: skew 1s ease-in-out infinite;
         }
 
         .hidden {
@@ -41,6 +41,15 @@
             }
             50% {
                 transform: rotate(7deg);
+            }
+        }
+        
+        @keyframes skew {
+            0%, 100% {
+                transform: skewX(-20deg);
+            }
+            50% {
+                transform: skewX(-20deg);
             }
         }
     </style>
