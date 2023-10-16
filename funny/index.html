@@ -10,6 +10,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            background-color: #000000;
         }
 
         h1 {
@@ -17,6 +18,7 @@
             font-family: Arial;
             text-align: center;
             animation: wave 1s ease-in-out infinite;
+            color: #FFFFFF;
         }
 
         video {
@@ -54,10 +56,6 @@
         }
     </style>
     <script>
-        function getRandomColor() {
-            return '#' + Math.floor(Math.random() * 16777215).toString(16);
-        }
-
         function showVideo() {
             const videoContainer = document.getElementById('video-container');
             const button = document.getElementById('show-button');
@@ -70,9 +68,7 @@
         }
 
         window.onload = function() {
-            document.body.style.backgroundColor = getRandomColor();
             const video = document.querySelector('video');
-            
             video.addEventListener('pause', function() {
                 video.play();
             });
