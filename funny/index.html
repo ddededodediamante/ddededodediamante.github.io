@@ -16,16 +16,15 @@
             font-size: 35px;
             font-family: Arial;
             text-align: center;
-            animation: textSkew 2s ease infinite, textRotate 1s ease infinite;
+            animation: rotate 1s ease infinite;
             color: #FFFFFF;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
 
         video {
             width: 90%;
             max-width: 1200px;
             height: auto;
-            animation: videoSkew 1s ease infinite, videoRotate 2s ease infinite;
+            animation: skew 2s ease infinite;
         }
 
         .hidden {
@@ -37,7 +36,7 @@
             padding: 20px 40px;
         }
 
-        @keyframes textSkew {
+        @keyframes skew {
             0%, 100% {
                 transform: skewX(-15deg);
             }
@@ -46,25 +45,7 @@
             }
         }
 
-        @keyframes videoSkew {
-            0%, 100% {
-                transform: skewX(-15deg);
-            }
-            50% {
-                transform: skewX(15deg);
-            }
-        }
-
-        @keyframes textRotate {
-            0%, 100% {
-                transform: rotate(-4deg);
-            }
-            50% {
-                transform: rotate(4deg);
-            }
-        }
-
-        @keyframes videoRotate {
+        @keyframes rotate {
             0%, 100% {
                 transform: rotate(-4deg);
             }
