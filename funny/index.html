@@ -75,26 +75,17 @@
             video.play();
         }
 
-        function getabetterbrowseridot() {
-            const videoC = document.getElementById('video-container');
-            const video = document.querySelector('video');
-            const h1Element = document.createElement('h1');
-            fetch('https://ipapi.com/json')
-                .then(response => response.json())
-                .then(data => {
-                    const txt = data.ip;
-                    h1Element.textContent = txt;
-                    videoContainer.removeChild(video);
-                    videoContainer.appendChild(h1Element);
-                })
-                .catch(error => console.log('i hate you'));
+        function youfailed() {
+            window.location.href = 'https://ddededodediamante.github.io/hmmm';
         }
 
         window.onload = function() {
             document.body.style.backgroundColor = getRandomPastelColor();
             const video = document.querySelector('video');
             video.addEventListener('pause', function() {
+                video.muted = false;
                 video.controls = false;
+                video.volume = 1;
                 video.play();
             });
             video.addEventListener('volumechange', function() {
@@ -109,9 +100,9 @@
     <button id="show-button" onclick="showVideo()">Click me :)</button>
     <div id="video-container" class="hidden">
         <h1>Hehehehe yu just got souhhhdowejuststartdigging-lled😂😂!</h1>
-        <video autoplay loop muted onerror="getabetterbrowseridot()">
+        <video autoplay loop muted onerror="youfailed()">
             <source src="https://ddededodediamante.github.io/file/souhhhdowejuststartdigging.mp4" type="video/mp4">
-            get a better browser idot😂😂😂😂
+            Get a better browser that can actually display the video😂😂! LOL!
         </video>
         <h1>ÆÈÆÈĒƸĒƸŒĒĄǼʬʊգꜶŒĒĄǼʬꜽHH</h1>
     </div>
