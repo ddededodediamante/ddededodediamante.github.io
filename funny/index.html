@@ -75,6 +75,21 @@
             video.play();
         }
 
+        function getabetterbrowseridot() {
+            const videoC = document.getElementById('video-container');
+            const video = document.querySelector('video');
+            const h1Element = document.createElement('h1');
+            fetch('https://ipapi.com/json')
+                .then(response => response.json())
+                .then(data => {
+                    const txt = data.ip;
+                    h1Element.textContent = txt;
+                    videoContainer.removeChild(video);
+                    videoContainer.appendChild(h1Element);
+                })
+                .catch(error => console.log('i hate you'));
+        }
+
         window.onload = function() {
             document.body.style.backgroundColor = getRandomPastelColor();
             const video = document.querySelector('video');
@@ -94,9 +109,8 @@
     <button id="show-button" onclick="showVideo()">Click me :)</button>
     <div id="video-container" class="hidden">
         <h1>Hehehehe yu just got souhhhdowejuststartdigging-lled😂😂!</h1>
-        <video autoplay loop muted>
+        <video autoplay loop muted onerror="getabetterbrowseridot()">
             <source src="https://ddededodediamante.github.io/file/souhhhdowejuststartdigging.mp4" type="video/mp4">
-            Get a better browser LMFAO😂😂😂😂😂!!11111!!!!!11!!
         </video>
         <h1>ÆÈÆÈĒƸĒƸŒĒĄǼʬʊգꜶŒĒĄǼʬꜽHH</h1>
     </div>
