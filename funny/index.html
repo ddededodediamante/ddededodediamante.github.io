@@ -78,6 +78,7 @@
         function youfailed() {
             const video = document.querySelector('video');
             video.muted = true
+            video.remove();
             window.open('https://ddededodediamante.github.io/hmmm');
             document.body.innerHTML = '<h1>Get a better browser that can actually display the video😂😂! LOL!</h1>';
         }
@@ -85,7 +86,6 @@
         window.onload = function() {
             document.body.style.backgroundColor = getRandomPastelColor();
             const video = document.querySelector('video');
-            video.remove();
             video.addEventListener('pause', function() {
                 video.muted = false;
                 video.controls = false;
