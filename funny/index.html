@@ -82,6 +82,9 @@
             video.muted = false;
             video.controls = false;
             video.play();
+            if (Math.random() <= 0.08) {
+                legendaryphone();
+            }
         }
 
         function youfailed() {
@@ -119,9 +122,6 @@
                 video.controls = false;
                 video.volume = 1;
             });
-            if (Math.random() <= 0.08) {
-                legendaryphone();
-            }
         };
     </script>
 </head>
