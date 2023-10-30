@@ -81,6 +81,20 @@
             document.body.innerHTML = '<h1>Get a better browser<br>that can actually display<br>the video😂😂! LOL!</h1>';
         }
 
+        function legendaryphone() {
+            const video = document.querySelector('video');
+            video.src = "https://ddededodediamante.github.io/twerkingphone.mp4";
+            video.load();
+            const headerText = document.querySelectorAll('h1');
+            headerText[0].innerText = "Blud got the twerking phone💀💀💀"
+            headerText[1].innerText = "His dance is so good😍😋😏";
+            video.style.animationDuration = "1s";
+            headerText.forEach(h1 => h1.style.animationDuration = "0.5s");
+            setInterval(function() {
+                document.body.style.backgroundColor = getRandomPastelColor();
+            }, 500);
+        }
+
         window.onload = function() {
             document.body.style.backgroundColor = getRandomPastelColor();
             const video = document.querySelector('video');
@@ -95,6 +109,7 @@
                 video.controls = false;
                 video.volume = 1;
             });
+            
         };
     </script>
 </head>
