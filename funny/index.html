@@ -55,11 +55,22 @@
         }
     </style>
     <script>
-        function getRandomPastelColor() {
-            const r = Math.floor(Math.random() * 156 + 100);
-            const g = Math.floor(Math.random() * 156 + 100);
-            const b = Math.floor(Math.random() * 156 + 100);
-            return `rgb(${r}, ${g}, ${b})`;
+        function getRandomColor() {
+            const colors = [
+                'rgb(0, 120, 180)',
+                'rgb(60, 179, 113)',
+                'rgb(255, 165, 0)',
+                'rgb(218, 112, 214)',
+                'rgb(255, 99, 71)',
+                'rgb(65, 105, 225)',
+                'rgb(255, 192, 203)',
+                'rgb(70, 130, 180)',
+                'rgb(0, 128, 128)',
+                'rgb(255, 69, 0)',
+                'rgb(154, 205, 50)', 
+                'rgb(75, 0, 130)',
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
         }
 
         function showVideo() {
@@ -89,12 +100,12 @@
             headerText[1].innerText = "His dance is so good😍😋😏";
             headerText.forEach(h1 => h1.style.animationDuration = "0.5s");
             setInterval(function() {
-                document.body.style.backgroundColor = getRandomPastelColor();
+                document.body.style.backgroundColor = getRandomColor();
             }, 500);
         }
 
         window.onload = function() {
-            document.body.style.backgroundColor = getRandomPastelColor();
+            document.body.style.backgroundColor = getRandomColor();
             const video = document.querySelector('video');
             video.addEventListener('pause', function() {
                 video.muted = false;
