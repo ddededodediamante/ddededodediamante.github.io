@@ -20,6 +20,13 @@
             color: #FFFFFF;
         }
 
+        h2 {
+            font-size: 25px;
+            font-family: Arial;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
         video {
             width: 90%;
             max-width: 1200px;
@@ -88,8 +95,8 @@
             }
             setInterval(function() {
                 const timetime = Math.floor((new Date().getTime() - showvideotime) / 1000);
-                const headerText = document.querySelectorAll('h1');
-                headerText[3].innerText = `You have been watching this for ${timetime} seconds!`
+                const headerText = document.querySelector('h2');
+                headerText.innerText = `You have been watching this for ${timetime} seconds!`;
             }, 1000);
         }
 
@@ -140,7 +147,7 @@
             Lol
         </video>
         <h1>ÆÈÆÈĒƸĒƸŒĒĄǼʬʊգꜶŒĒĄǼʬꜽHH</h1>
-        <h1>You have been watching this for 0 seconds</h1>
+        <h2>You have been watching this for 0 seconds</h2>
     </div>
 </body>
 </html>
