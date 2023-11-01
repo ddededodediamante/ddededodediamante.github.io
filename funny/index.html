@@ -87,7 +87,8 @@
                 legendaryphone();
             }
             setInterval(function() {
-                timetime = Math.floor((new Date().getTime(); - showvideotime) / 1000)
+                const timetime = Math.floor((new Date().getTime() - showvideotime) / 1000);
+                const headerText = document.querySelectorAll('h1');
                 headerText[3].innerText = `You have been watching this for ${timetime} seconds!`
             }, 1000);
         }
