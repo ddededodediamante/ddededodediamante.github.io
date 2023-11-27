@@ -30,8 +30,9 @@
 
     <script>
         function transformString(input) {
+            const replacedInput = input.replace('"rawValue": "','').replace('",','');
             const regex = /`([^`]+)`/g;
-            const result = input.replace(regex, (match, word) => {
+            const result = replacedInput.replace(regex, (match, word) => {
                 const withoutSpaces = word.replace(/\s+/g, '');
                 return withoutSpaces;
             });
