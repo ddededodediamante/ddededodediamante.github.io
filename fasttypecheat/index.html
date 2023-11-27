@@ -35,7 +35,7 @@
                 const withoutSpaces = word.replace(/\s+/g, '');
                 return withoutSpaces;
             });
-            return result;
+            return result.replace(/`/g, '');;
         }
         
         function copyToClipboard(text) {
