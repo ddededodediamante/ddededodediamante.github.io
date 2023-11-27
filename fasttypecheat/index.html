@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fast Type Cheat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        textarea {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-
     <h1>Fast Type Cheat</h1>
-
-    <label for="inputText">Paste something.</label>
-    <textarea id="inputText" rows="4" cols="50"></textarea>
-
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
-
-    <p>Result:</p>
-    <textarea id="outputText" rows="4" cols="50" readonly></textarea>
+    <textarea id="inputText" rows="4" placeholder="Paste something..."></textarea>
 
     <script>
         function copyToClipboard() {
@@ -36,6 +47,12 @@
             outputText.select();
             document.execCommand("copy");
         }
+
+        document.getElementById("inputText").addEventListener("input", function() {
+            var inputText = this.value;
+            var resultText = "You pasted: " + inputText.toUpperCase();
+            copyToClipboard(resultText);
+        });
     </script>
 
 </body>
