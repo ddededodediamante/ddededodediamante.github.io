@@ -29,29 +29,29 @@
     <textarea id="inputText" rows="4" placeholder="Paste something..."></textarea>
 
     <script>
-        function copyToClipboard() {
-            var inputText = document.getElementById("inputText").value;
-
-            function transformString(inputString) {
-              const wordsArray = inputString.split(' ');
-              const transformedArray = [];
-              for (const word of wordsArray) {
+        function transformString(inputString) {
+            const wordsArray = inputString.split(' ');
+            const transformedArray = [];
+            for (const word of wordsArray) {
                 const transformedWord = word.replace(/\s/g, '').toLowerCase().replace(/`/g, "'");
                 transformedArray.push(transformedWord);
-              }
-              const transformedString = transformedArray.join(' ');
-              return transformedString;
             }
-            document.getElementById("outputText").value = transformString(inputText);
-            var outputText = document.getElementById("outputText");
-            outputText.select();
+            const transformedString = transformedArray.join(' ');
+            return transformedString;
+        }
+        
+        function copyToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
             document.execCommand("copy");
+            document.body.removeChild(textArea);
         }
 
         document.getElementById("inputText").addEventListener("input", function() {
             var inputText = this.value;
-            var resultText = "You pasted: " + inputText.toUpperCase();
-            copyToClipboard(resultText);
+            copyToClipboard(transformString(inputText));
         });
     </script>
 
