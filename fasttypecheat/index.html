@@ -29,15 +29,13 @@
     <textarea id="inputText" rows="4" placeholder="Paste something..."></textarea>
 
     <script>
-        function transformString(inputString) {
-            const wordsArray = inputString.split(' ');
-            const transformedArray = [];
-            for (const word of wordsArray) {
-                const transformedWord = word.replace(/\s/g, '').toLowerCase().replace(/`/g, "'");
-                transformedArray.push(transformedWord);
-            }
-            const transformedString = transformedArray.join(' ');
-            return transformedString;
+        function transformString(input) {
+            const regex = /`([^`]+)`/g;
+            const result = input.replace(regex, (match, word) => {
+                const withoutSpaces = word.replace(/\s+/g, '');
+                return withoutSpaces;
+            });
+            return result;
         }
         
         function copyToClipboard(text) {
