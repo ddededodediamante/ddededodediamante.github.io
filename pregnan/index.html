@@ -18,10 +18,19 @@
             width: 100%;
             height: 100%;
             object-fit: fill;
+            display: none; /* Initially hide videos */
+        }
+
+        button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
+    <button onclick="startAutoplay()">Play Videos</button>
     <script>
         // Replace 'your_video.mp4' with the actual path or URL of your video file.
         const videoSource = 'https://ddededodediamante.github.io/file/pregnan.mp4';
@@ -32,8 +41,6 @@
         // Create video elements dynamically
         for (let i = 0; i < numberOfVideos; i++) {
             const video = document.createElement('video');
-            video.controls = true;
-            video.loop = true;
             video.autoplay = true; // Add the autoplay attribute
 
             const source = document.createElement('source');
@@ -42,6 +49,14 @@
 
             video.appendChild(source);
             document.body.appendChild(video);
+        }
+
+        function startAutoplay() {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.style.display = 'block';
+            });
+            document.querySelector('button').style.display = 'none';
         }
     </script>
 </body>
