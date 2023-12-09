@@ -8,17 +8,16 @@
         body {
             margin: 0;
             overflow: hidden;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 0;
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            height: 100vh;
         }
 
         video {
             width: 100%;
             height: 100%;
-            object-fit: fill;
-            display: none;
+            object-fit: cover;
         }
 
         button {
@@ -52,12 +51,12 @@
         function startAutoplay() {
             document.querySelector('button').style.display = 'none';
             const videos = document.querySelectorAll('video');
-            var startTime = 0
+            var startTime = 0;
             for (const video of videos) {
                 video.style.display = 'block';
                 video.currentTime = startTime;
                 video.play();
-                startTime += 0.03
+                startTime += 0.03;
             }
         }
     </script>
