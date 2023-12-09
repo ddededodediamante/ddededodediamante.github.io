@@ -41,8 +41,8 @@
         // Create video elements dynamically
         for (let i = 0; i < numberOfVideos; i++) {
             const video = document.createElement('video');
-            video.autoplay = true; // Add the autoplay attribute
-            video.style.display = 'none'; // Initially hide videos
+            video.paused = true;
+            video.style.display = 'none';
 
             const source = document.createElement('source');
             source.src = videoSource;
