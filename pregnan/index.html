@@ -42,6 +42,7 @@
         for (let i = 0; i < numberOfVideos; i++) {
             const video = document.createElement('video');
             video.autoplay = true; // Add the autoplay attribute
+            video.style.display = 'none'; // Initially hide videos
 
             const source = document.createElement('source');
             source.src = videoSource;
@@ -59,15 +60,14 @@
             });
         }
 
-
         async function startAutoplay() {
-            document.querySelector('button').style.display = 'none';
             const videos = document.querySelectorAll('video');
             for (const video of videos) {
                 video.style.display = 'block';
-                video.play();
                 await wait(50);
+                video.play();
             }
+            document.querySelector('button').style.display = 'none';
         }
     </script>
 </body>
