@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Am i pregnan</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Replace 'your_video.mp4' with the actual path or URL of your video file.
+        const videoSource = 'https://ddededodediamante.github.io/file/pregnan.mp4';
+
+        // Number of videos you want to display
+        const numberOfVideos = 5;
+
+        // Create video elements dynamically
+        for (let i = 0; i < numberOfVideos; i++) {
+            const video = document.createElement('video');
+            video.controls = true;
+            video.loop = true;
+            video.autoplay = true;
+
+            const source = document.createElement('source');
+            source.src = videoSource;
+            source.type = 'video/mp4';
+
+            video.appendChild(source);
+            document.body.appendChild(video);
+        }
+    </script>
+</body>
+</html>
