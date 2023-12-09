@@ -61,13 +61,13 @@
         }
 
         async function startAutoplay() {
+            document.querySelector('button').style.display = 'none';
             const videos = document.querySelectorAll('video');
             for (const video of videos) {
                 video.style.display = 'block';
-                await wait(70);
+                await wait(30);
                 video.play();
             }
-            document.querySelector('button').style.display = 'none';
         }
     </script>
 </body>
