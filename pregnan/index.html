@@ -61,13 +61,13 @@
 
 
         async function startAutoplay() {
+            document.querySelector('button').style.display = 'none';
             const videos = document.querySelectorAll('video');
-            videos.forEach(video => {
+            for (const video of videos) {
                 video.style.display = 'block';
                 video.play();
-                await wait(50)
-            });
-            document.querySelector('button').style.display = 'none';
+                await wait(50);
+            }
         }
     </script>
 </body>
