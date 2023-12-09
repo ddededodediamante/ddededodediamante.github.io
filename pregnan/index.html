@@ -52,21 +52,15 @@
             document.body.appendChild(video);
         }
 
-        function wait(timeout) {
-            return new Promise(resolve => {
-              setTimeout(() => {
-                  resolve();
-              }, timeout);
-            });
-        }
-
-        async function startAutoplay() {
+        function startAutoplay() {
             document.querySelector('button').style.display = 'none';
             const videos = document.querySelectorAll('video');
+            var startTime = 0
             for (const video of videos) {
                 video.style.display = 'block';
-                await wait(20);
+                video.currentTime = startTime;
                 video.play();
+                startTime += 0.05
             }
         }
     </script>
