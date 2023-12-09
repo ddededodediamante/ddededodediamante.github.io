@@ -9,8 +9,8 @@
             margin: 0;
             overflow: hidden;
             display: grid;
-            grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
-            grid-template-rows: repeat(4, 1fr); /* Adjust the number of rows as needed */
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr)
             gap: 0;
         }
 
@@ -32,13 +32,9 @@
 <body>
     <button onclick="startAutoplay()">Am i pregnan</button>
     <script>
-        // Replace 'your_video.mp4' with the actual path or URL of your video file.
         const videoSource = 'https://ddededodediamante.github.io/file/pregnan.mp4';
-
-        // Number of videos you want to display
         const numberOfVideos = 12; // Adjust the number of videos as needed
 
-        // Create video elements dynamically
         for (let i = 0; i < numberOfVideos; i++) {
             const video = document.createElement('video');
             video.paused = true;
