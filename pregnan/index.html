@@ -51,11 +51,21 @@
             document.body.appendChild(video);
         }
 
-        function startAutoplay() {
+        function wait(timeout) {
+            return new Promise(resolve => {
+              setTimeout(() => {
+                  resolve();
+              }, timeout);
+            });
+        }
+
+
+        async function startAutoplay() {
             const videos = document.querySelectorAll('video');
             videos.forEach(video => {
                 video.style.display = 'block';
                 video.play();
+                await wait(50)
             });
             document.querySelector('button').style.display = 'none';
         }
