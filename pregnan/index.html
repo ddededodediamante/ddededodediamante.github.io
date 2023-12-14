@@ -32,7 +32,7 @@
     <button onclick="startAutoplay()">Am I pregnant</button>
     <script>
         const videoSource = 'https://ddededodediamante.github.io/file/pregnan.mp4';
-        const numberOfVideos = 10;
+        const numberOfVideos = 12;
 
         for (let i = 0; i < numberOfVideos; i++) {
             const video = document.createElement('video');
@@ -56,7 +56,7 @@
                 video.style.opacity = '1';
                 video.currentTime = startTime;
                 video.play();
-                startTime += 0.02;
+                startTime += 0.01;
             }
         }
     </script>
