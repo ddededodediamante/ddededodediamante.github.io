@@ -36,14 +36,11 @@
     <script>
         const videoSource = 'https://ddededodediamante.github.io/file/pregnan.mp4';
         const numberOfVideos = 12;
-        var startTime = 0;
         
         for (let i = 0; i < numberOfVideos; i++) {
             const video = document.createElement('video');
             video.paused = true;
             video.loop = true;
-            video.currentTime = startTime;
-            startTime += 0.01;
             
             const source = document.createElement('source');
             source.src = videoSource;
