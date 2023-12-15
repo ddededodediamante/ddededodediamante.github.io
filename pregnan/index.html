@@ -43,6 +43,7 @@
             video.paused = true;
             video.loop = true;
             video.currentTime = startTime;
+            startTime += 0.01;
             
             const source = document.createElement('source');
             source.src = videoSource;
@@ -50,7 +51,6 @@
 
             video.appendChild(source);
             document.body.appendChild(video);
-            startTime += 0.01;
         }
 
         function startAutoplay() {
