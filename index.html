@@ -20,13 +20,15 @@
   </style>
 </head>
 <body>
-
-  <button id="Button">Increment Variable</button>
+  
+  <p id="Counter">0</p>
+  <button id="Button">Increment</button>
 
   <script>
     let counter = 0;
-
+    
     function increment() {
+      document.getElementById("Counter").textContent = counter;
       counter++;
     }
 
