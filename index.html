@@ -28,13 +28,11 @@
     let counter = 0;
     
     function increment() {
-      document.getElementById("Counter").textContent = counter;
       counter++;
+      document.getElementById("Counter").textContent = counter;
     }
 
-    const button = document.getElementById('Button');
-    button.addEventListener('click', increment);
+    document.getElementById('Button').addEventListener('click', increment);
   </script>
-
 </body>
 </html>
