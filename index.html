@@ -8,15 +8,8 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 8px;
-      border-width: 1px;
-      cursor: pointer;
-      transition: padding 0.5s ease;
+      background: url('https://i.ibb.co/J76jkwG/images.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
 
     #Title {
@@ -24,15 +17,15 @@
       transition: font-size 0.5s ease;
     }
 
-    #container {
+    .container {
       width: 100%;
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      background-color: #f8f8f8;
+      background-color: rgba(0, 0, 8, 0.63);
     }
 
-    #container button {
+    .container button {
       padding: 7px 14px;
       font-size: 16px;
       border-radius: 8px;
@@ -43,23 +36,20 @@
   </style>
 </head>
 <body>
-  <div id="container">
+  <div class="container">
     <button id="Reset">Reset points</button>
   </div>
-  <p id="Title">Ultra awesome clicker game!</p>
-  <p id="Counter">0</p>
-  <button id="Button">Increment</button>
+  <div class="container">
+    <p id="Title">Ultra awesome clicker game!</p>
+    <p id="Counter">0</p>
+    <button id="Button">Increment</button>
+  </div>
    
   <script>
     let counter = 0;
 
-    function changeCounter(newTxt) {
-      document.getElementById("Counter").textContent = newTxt;
-    }
-    
-    function increment() {
-      counter++;
-      changeCounter(counter);
+    function changeCounter(newCount) {
+      document.getElementById("Counter").textContent = newCount;
     }
 
     document.getElementById('Button').addEventListener('click', function() {
