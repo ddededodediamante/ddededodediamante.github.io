@@ -31,22 +31,44 @@
     #Title:hover {
       font-size: 21px;
     }
+
+    #container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f8f8f8;
+    }
   </style>
 </head>
 <body>
+  <div id="container">
+    <button id="Reset">Reset points</button>
+  </div>
   <p id="Title">Ultra awesome clicker game!</p>
   <p id="Counter">0</p>
   <button id="Button">Increment</button>
-
+   
   <script>
     let counter = 0;
+
+    function changeCounter(newTxt) {
+      document.getElementById("Counter").textContent = newTxt;
+    }
     
     function increment() {
       counter++;
-      document.getElementById("Counter").textContent = counter;
+      changeCounter(counter);
     }
 
-    document.getElementById('Button').addEventListener('click', increment);
+    document.getElementById('Button').addEventListener('click', function() {
+      counter++;
+      changeCounter(counter);
+    });
+    document.getElementById('Reset').addEventListener('click', function() {
+      counter = 0;
+      changeCounter(0);
+    });
   </script>
 </body>
 </html>
