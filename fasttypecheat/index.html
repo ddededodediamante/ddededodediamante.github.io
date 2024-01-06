@@ -29,14 +29,34 @@
     <textarea id="inputText" rows="4" placeholder="Paste something..."></textarea>
 
     <script>
-        function transformString(input) {
-            const replacedInput = input.replace('"rawValue": "','').replace('",','');
-            const regex = /`([^`]+)`/g;
-            const result = replacedInput.replace(regex, (match, word) => {
-                const withoutSpaces = word.replace(/\s+/g, '');
-                return withoutSpaces;
+        function normalizeSentence(inputString) {
+          const nouns = ["bird", "clock", "boy", "plastic", "duck", "teacher", "old lady", "professor", "hamster", "dog", "girl"];
+          const verbs = ["kicked", "ran", "flew", "dodged", "sliced", "rolled", "died", "breathed", "slept", "killed"];
+          const adjectives = ["beautiful", "lazy", "professional", "lovely", "dumb", "rough", "soft", "hot", "vibrating", "slimy"];
+          const adverbs = ["slowly", "elegantly", "precisely", "quickly", "sadly", "humbly", "proudly", "shockingly", "calmly", "passionately"];
+          const prepositions = ["down", "into", "up", "on", "upon", "below", "above", "through", "across", "towards"];
+
+          const replaceWords = (wordList, regex) => {
+            return inputString.replace(regex, match => {
+              const normalizedWord = wordList.find(word => word.startsWith(match.toLowerCase()));
+              return normalizedWord ? capitalizeFirstLetter(normalizedWord) : match;
             });
-            return result.replace(/`/g, '');;
+          };
+
+          const normalizeNouns = () => replaceWords(nouns, /\b\w+\b/g);
+          const normalizeVerbs = () => replaceWords(verbs, /\b\w+\b/g);
+          const normalizeAdjectives = () => replaceWords(adjectives, /\b\w+\b/g);
+          const normalizeAdverbs = () => replaceWords(adverbs, /\b\w+\b/g);
+          const normalizePrepositions = () => replaceWords(prepositions, /\b\w+\b/g);
+
+          let result = inputString;
+          result = normalizeNouns();
+          result = normalizeVerbs();
+          result = normalizeAdjectives();
+          result = normalizeAdverbs();
+          result = normalizePrepositions();
+
+          return result;
         }
         
         function copyToClipboard(text) {
@@ -50,7 +70,7 @@
 
         document.getElementById("inputText").addEventListener("input", function() {
             var inputText = this.value;
-            copyToClipboard(transformString(inputText));
+            copyToClipboard(normalizeSentence(inputText));
         });
     </script>
 
