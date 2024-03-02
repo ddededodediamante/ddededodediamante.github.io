@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ddededodediamante</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background-color: #eb459f;
+    }
+
+    #game {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+
+    #clickable-svg {
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div id="game">
+        <h1>ddededodediamante</h1>
+    <img id="ddededodediamante" src="https://ddededodediamante.github.io/file
+/ddededodediamante.svg" alt="ddededodediamante" width="100" height="100">
+        <p>ddededodediamantes: <span id="clicks">0</span></p>
+    </div>
+    <audio id="click-sound" src="https://ddededodediamante.github.io/file
+/ddededodediamante.mp3"></audio>
+    <script>let clicks = 0;
+
+document.getElementById("ddededodediamante").addEventListener("click", function() {
+    clicks += 1;
+    document.getElementById("clicks").innerText = clicks;
+    document.getElementById("click-sound").play();
+});
+</script>
+</body>
+</html>
