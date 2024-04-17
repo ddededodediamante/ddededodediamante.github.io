@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Rush E">
+    <meta property="og:description" content="Rush E">
+    <meta property="og:url" content="https://ddededodediamante.github.io/rushe/">
+    <title>Pregnan</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            position: static;
+        }
+
+        video {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="startAutoplay()">Rush E</button>
+    <script>
+        const videoSource = 'https://ddededodediamante.github.io/file/rushe.mp4';
+        const numberOfVideos = 12;
+        
+        for (let i = 0; i < numberOfVideos; i++) {
+            const video = document.createElement('video');
+            video.paused = true;
+            video.loop = true;
+            
+            const source = document.createElement('source');
+            source.src = videoSource;
+            source.type = 'video/mp4';
+
+            video.appendChild(source);
+            document.body.appendChild(video);
+        }
+
+        async function startAutoplay() {
+            document.querySelector('button').style.display = 'none';
+            const videos = document.querySelectorAll('video');
+            var startTime = 0;
+            for (const video of videos) {
+                video.style.visibility = 'visible';
+                video.style.opacity = '1';
+                video.play();
+            }
+        }
+    </script>
+</body>
+</html>
