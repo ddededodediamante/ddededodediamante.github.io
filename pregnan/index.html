@@ -21,7 +21,6 @@
             object-fit: fill;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.5s ease-in-out;
         }
 
         button {
@@ -32,34 +31,15 @@
     </style>
 </head>
 <body>
-    <button onclick="startAutoplay()">Am I pregnan</button>
+    <button id="buttocks" onclick="play()">Am I pregnan</button>
+    <video id="pregnancy" src="https://ddededodediamante.github.io/file/pregnan.mp4" type="video/mp4" paused="true" loop="true">
     <script>
-        const videoSource = 'https://ddededodediamante.github.io/file/pregnan.mp4';
-        const numberOfVideos = 12;
-        
-        for (let i = 0; i < numberOfVideos; i++) {
-            const video = document.createElement('video');
-            video.paused = true;
-            video.loop = true;
-            video.volume = 0.3;
-            
-            const source = document.createElement('source');
-            source.src = videoSource;
-            source.type = 'video/mp4';
-
-            video.appendChild(source);
-            document.body.appendChild(video);
-        }
-
-        async function startAutoplay() {
-            document.querySelector('button').style.display = 'none';
-            const videos = document.querySelectorAll('video');
-            var startTime = 0;
-            for (const video of videos) {
-                video.style.visibility = 'visible';
-                video.style.opacity = '1';
-                video.play();
-            }
+        function play() {
+            document.getElementById("buttocks").style.display = 'none';
+            const video = document.getElementById("pregnancy");
+            video.style.visibility = 'visible';
+            video.style.opacity = '1';
+            video.play();
         }
     </script>
 </body>
